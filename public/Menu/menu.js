@@ -656,8 +656,8 @@ function addTheIcedWord(){
 
 
 
-let render = 'https://walshepos.vercel.app/api/coredrinks'
-let local = 'https://walshepos.vercel.app/api/coredrinks'
+let render = 'https://star-post.vercel.app/api/coredrinks'
+let local = 'https://star-post.vercel.app/api/coredrinks'
 
 const statusLight = document.querySelector('.statusLight')
 async function apiRequest(url){  //Calls the API and brings drink data to the 
@@ -705,7 +705,7 @@ function shuffle(array) {
 
 async function allcustom(){
     try{
-        const response = await fetch('https://walshepos.vercel.app/api/allnames')
+        const response = await fetch('https://star-post.vercel.app/api/allnames')
         const data = await response.json()
         console.log(data)
     }
@@ -1409,7 +1409,7 @@ function errorMessage(message,color){
 
 let postUrl
 let production = 'dev'
-let uhhh = "https://walshepos.vercel.app/menu"
+let uhhh = "https://star-post.vercel.app/menu"
 function dynamicURL(word){
     let loc = window.location.href.includes('coffee')
     if(loc){
@@ -1421,22 +1421,22 @@ function dynamicURL(word){
 }
 dynamicURL()
 if(production === 'dev'){
-    localStorage.setItem('LastClicked',["https://walshepos.vercel.app/api/customizations",local,'https://walshepos.vercel.app/api/customers','https://localhost:8000/order'])
+    localStorage.setItem('LastClicked',["https://star-post.vercel.app/api/customizations",local,'https://star-post.vercel.app/api/customers','https://localhost:8000/order'])
     removeAllChildNodes(document.querySelector('.items'))
     removeAllChildNodes(document.querySelector('.drinkType'))
-    apiRequestForCustomizations("https://walshepos.vercel.app/api/customizations")
+    apiRequestForCustomizations("https://star-post.vercel.app/api/customizations")
     apiRequest(local)
-    apiRequestCustomer('https://walshepos.vercel.app/api/customers')
-    postUrl ='https://walshepos.vercel.app/order'
+    apiRequestCustomer('https://star-post.vercel.app/api/customers')
+    postUrl ='https://star-post.vercel.app/order'
 }else
 if(production=== 'live'){
-    localStorage.setItem('LastClicked',["https://walshepos.vercel.app/api/customizations",render,"https://walshepos.vercel.app/api/customers,'https://walshepos.vercel.app/order'"])
+    localStorage.setItem('LastClicked',["https://star-post.vercel.app/api/customizations",render,"https://star-post.vercel.app/api/customers,'https://star-post.vercel.app/order'"])
     removeAllChildNodes(document.querySelector('.items'))
     removeAllChildNodes(document.querySelector('.drinkType'))
-    apiRequestForCustomizations("https://walshepos.vercel.app/api/customizations")
-    apiRequestCustomer('https://walshepos.vercel.app/api/customers')
+    apiRequestForCustomizations("https://star-post.vercel.app/api/customizations")
+    apiRequestCustomer('https://star-post.vercel.app/api/customers')
     apiRequest(render)
-    postUrl ='https://walshepos.vercel.app/order'
+    postUrl ='https://star-post.vercel.app/order'
 }
 
 document.querySelectorAll('.findOrder').forEach((elem)=>{
