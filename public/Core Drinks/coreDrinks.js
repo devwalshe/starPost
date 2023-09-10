@@ -15,8 +15,8 @@ function nameShortener(name){
     
 }
 
-let render = 'https://star-post.vercel.app/api/coredrinks'
-let local = 'https://star-post.vercel.app/api/coredrinks'
+let render = 'https://localhost:8000/api/coredrinks'
+https://localhost:8000/api/coredrinks'
 async function apiRequest(){
     
     try{
